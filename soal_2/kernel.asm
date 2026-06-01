@@ -6,13 +6,10 @@ global _getChar
 extern _main
 
 _start:
-
     cli
-
     mov ax, cs
     mov ds, ax
     mov es, ax
-
     sti
 
     call _main
@@ -20,11 +17,9 @@ _start:
 .hang:
     jmp .hang
 
-
 _putInMemory:
     push bp
     mov bp, sp
-
     push ds
 
     mov ax, [bp+4]
@@ -35,10 +30,16 @@ _putInMemory:
     mov [si], cl
 
     pop ds
-
     pop bp
     ret
 
-; implement this
 _getChar:
-    ; YOUR CODE
+    push bp
+    mov bp, sp
+
+    mov ah, 0x00        ; Interupsi BIOS: Baca input keyboard
+    int 0x16            ; Karakter ASCII akan disimpan di AL
+
+    mov ah, 0x00        ; Bersihkan register AH tinggi
+    pop bp
+    ret
