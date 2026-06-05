@@ -41,31 +41,21 @@ Berhasil menghasilkan:
 ```bash
 make run
 ```
-Kendala
-Undefined Symbol imod
+## Kendala
 
 Saat proses linking muncul error:
 
-undefined symbol: imod
+- undefined symbol: imod
 
-Penyebabnya adalah penggunaan operator modulo (%) pada fungsi konversi angka.
-
-Masalah diselesaikan dengan membuat algoritma konversi integer ke string menggunakan metode pengurangan berulang.
-
-Display Library SDL2 Tidak Tersedia
+- Display Library SDL2 Tidak Tersedia
 
 Saat menjalankan Bochs muncul error:
 
-display library 'sdl2' not available
+- display library 'sdl2' not available
 
 Masalah diselesaikan dengan mengganti konfigurasi menjadi:
-
 display_library: x
 BIOS Path Tidak Sesuai
-
-Bochs tidak dapat menemukan BIOS karena konfigurasi masih menggunakan placeholder dari template.
-
-Solusinya adalah menyesuaikan path BIOS sesuai instalasi yang tersedia pada sistem.
 
 Kesimpulan
 
